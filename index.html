@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video with Rotating PNG Button</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire background */
+            z-index: -1; /* Place video behind other content */
+        }
+
+        .button-container {
+            text-align: center;
+            z-index: 1; /* Ensure button is above the video */
+        }
+
+        .btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-block;
+            margin: 4px 2px;
+            transition: transform 0.3s ease-out; /* Add animation transition */
+        }
+
+        .btn img {
+            width: 80px; /* Adjust the size of the rotating image */
+            height: auto;
+            border-radius: 50%;
+            animation: rotate 15s linear infinite; /* CSS animation */
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .button-position {
+            position: absolute;
+            bottom: 160px; /* Lifted by 10px */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1; /* Ensure button is above the video */
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* Media query for tablets */
+        @media (max-width: 768px) {
+            .btn img {
+                width: 60px;
+            }
+
+            .button-position {
+                bottom: 80px; /* Adjusted for better visibility on tablets */
+            }
+        }
+
+        /* Media query for phones */
+        @media (max-width: 480px) {
+            .btn img {
+                width: 50px;
+            }
+
+            .button-position {
+                bottom: 60px; /* Adjusted for better visibility on phones */
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="vid2.mp4" type="video/mp4"> <!-- Replace with your video file -->
+        Your browser does not support the video tag.
+    </video>
+    <div class="button-position">
+        <div class="button-container">
+            <button class="btn" onclick="redirectToVideo()">
+                <!-- Replace with your rotating PNG image -->
+                <img src="img3.png" alt="ධර්ම චක්‍රය">
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToVideo() {
+            window.location.href = 'video.html'; // Make sure to create this page
+        }
+    </script>
+</body>
+</html>
