@@ -61,6 +61,22 @@
             }
         }
 
+        .text-btn {
+            background: none;
+            border: none;
+            padding: 1px;
+            cursor: pointer;
+            color: white; /* Text color */
+            font-size: 18px; /* Text size */
+            margin-top: 1px; /* Space between image and text button */
+            text-decoration: underline; /* Underline text */
+            transition: opacity 0.3s ease;
+        }
+
+        .text-btn:hover {
+            opacity: 0.8;
+        }
+
         .button-position {
             position: absolute;
             bottom: 160px; /* Lifted by 10px */
@@ -108,6 +124,7 @@
                 <img src="img3.png" alt="ධර්ම චක්‍රය">
             </button>
         </div>
+        <button class="text-btn" onclick="redirectToVideo()">මෙතනින් පිවිසෙන්න</button>
     </div>
 
     <script>
